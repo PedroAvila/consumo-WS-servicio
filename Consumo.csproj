@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -67,6 +70,9 @@
     <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.GuardarFrutasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.GuardarJsonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.GuardarLogResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -82,6 +88,9 @@
     <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.ObtenerfrutasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.ObtenerProductosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.RetornarJsonResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -89,6 +98,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\Servicios.wsdl" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

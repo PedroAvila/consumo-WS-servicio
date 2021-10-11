@@ -153,6 +153,20 @@ namespace Consumo.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RetornarJson", ReplyAction="*")]
         System.Threading.Tasks.Task<Consumo.ServiceReference1.RetornarJsonResponse> RetornarJsonAsync(Consumo.ServiceReference1.RetornarJsonRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento json del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarJson", ReplyAction="*")]
+        Consumo.ServiceReference1.GuardarJsonResponse GuardarJson(Consumo.ServiceReference1.GuardarJsonRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarJson", ReplyAction="*")]
+        System.Threading.Tasks.Task<Consumo.ServiceReference1.GuardarJsonResponse> GuardarJsonAsync(Consumo.ServiceReference1.GuardarJsonRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ObtenerProductosResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerProductos", ReplyAction="*")]
+        Consumo.ServiceReference1.ObtenerProductosResponse ObtenerProductos(Consumo.ServiceReference1.ObtenerProductosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerProductos", ReplyAction="*")]
+        System.Threading.Tasks.Task<Consumo.ServiceReference1.ObtenerProductosResponse> ObtenerProductosAsync(Consumo.ServiceReference1.ObtenerProductosRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -739,6 +753,135 @@ namespace Consumo.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GuardarJsonRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GuardarJson", Namespace="http://tempuri.org/", Order=0)]
+        public Consumo.ServiceReference1.GuardarJsonRequestBody Body;
+        
+        public GuardarJsonRequest() {
+        }
+        
+        public GuardarJsonRequest(Consumo.ServiceReference1.GuardarJsonRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GuardarJsonRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string json;
+        
+        public GuardarJsonRequestBody() {
+        }
+        
+        public GuardarJsonRequestBody(string json) {
+            this.json = json;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GuardarJsonResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GuardarJsonResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Consumo.ServiceReference1.GuardarJsonResponseBody Body;
+        
+        public GuardarJsonResponse() {
+        }
+        
+        public GuardarJsonResponse(Consumo.ServiceReference1.GuardarJsonResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GuardarJsonResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GuardarJsonResult;
+        
+        public GuardarJsonResponseBody() {
+        }
+        
+        public GuardarJsonResponseBody(string GuardarJsonResult) {
+            this.GuardarJsonResult = GuardarJsonResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerProductosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerProductos", Namespace="http://tempuri.org/", Order=0)]
+        public Consumo.ServiceReference1.ObtenerProductosRequestBody Body;
+        
+        public ObtenerProductosRequest() {
+        }
+        
+        public ObtenerProductosRequest(Consumo.ServiceReference1.ObtenerProductosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class ObtenerProductosRequestBody {
+        
+        public ObtenerProductosRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerProductosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerProductosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Consumo.ServiceReference1.ObtenerProductosResponseBody Body;
+        
+        public ObtenerProductosResponse() {
+        }
+        
+        public ObtenerProductosResponse(Consumo.ServiceReference1.ObtenerProductosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ObtenerProductosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ObtenerProductosResult;
+        
+        public ObtenerProductosResponseBody() {
+        }
+        
+        public ObtenerProductosResponseBody(string ObtenerProductosResult) {
+            this.ObtenerProductosResult = ObtenerProductosResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiciosSoapChannel : Consumo.ServiceReference1.ServiciosSoap, System.ServiceModel.IClientChannel {
     }
@@ -989,6 +1132,54 @@ namespace Consumo.ServiceReference1 {
             Consumo.ServiceReference1.RetornarJsonRequest inValue = new Consumo.ServiceReference1.RetornarJsonRequest();
             inValue.Body = new Consumo.ServiceReference1.RetornarJsonRequestBody();
             return ((Consumo.ServiceReference1.ServiciosSoap)(this)).RetornarJsonAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Consumo.ServiceReference1.GuardarJsonResponse Consumo.ServiceReference1.ServiciosSoap.GuardarJson(Consumo.ServiceReference1.GuardarJsonRequest request) {
+            return base.Channel.GuardarJson(request);
+        }
+        
+        public string GuardarJson(string json) {
+            Consumo.ServiceReference1.GuardarJsonRequest inValue = new Consumo.ServiceReference1.GuardarJsonRequest();
+            inValue.Body = new Consumo.ServiceReference1.GuardarJsonRequestBody();
+            inValue.Body.json = json;
+            Consumo.ServiceReference1.GuardarJsonResponse retVal = ((Consumo.ServiceReference1.ServiciosSoap)(this)).GuardarJson(inValue);
+            return retVal.Body.GuardarJsonResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Consumo.ServiceReference1.GuardarJsonResponse> Consumo.ServiceReference1.ServiciosSoap.GuardarJsonAsync(Consumo.ServiceReference1.GuardarJsonRequest request) {
+            return base.Channel.GuardarJsonAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Consumo.ServiceReference1.GuardarJsonResponse> GuardarJsonAsync(string json) {
+            Consumo.ServiceReference1.GuardarJsonRequest inValue = new Consumo.ServiceReference1.GuardarJsonRequest();
+            inValue.Body = new Consumo.ServiceReference1.GuardarJsonRequestBody();
+            inValue.Body.json = json;
+            return ((Consumo.ServiceReference1.ServiciosSoap)(this)).GuardarJsonAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Consumo.ServiceReference1.ObtenerProductosResponse Consumo.ServiceReference1.ServiciosSoap.ObtenerProductos(Consumo.ServiceReference1.ObtenerProductosRequest request) {
+            return base.Channel.ObtenerProductos(request);
+        }
+        
+        public string ObtenerProductos() {
+            Consumo.ServiceReference1.ObtenerProductosRequest inValue = new Consumo.ServiceReference1.ObtenerProductosRequest();
+            inValue.Body = new Consumo.ServiceReference1.ObtenerProductosRequestBody();
+            Consumo.ServiceReference1.ObtenerProductosResponse retVal = ((Consumo.ServiceReference1.ServiciosSoap)(this)).ObtenerProductos(inValue);
+            return retVal.Body.ObtenerProductosResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Consumo.ServiceReference1.ObtenerProductosResponse> Consumo.ServiceReference1.ServiciosSoap.ObtenerProductosAsync(Consumo.ServiceReference1.ObtenerProductosRequest request) {
+            return base.Channel.ObtenerProductosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Consumo.ServiceReference1.ObtenerProductosResponse> ObtenerProductosAsync() {
+            Consumo.ServiceReference1.ObtenerProductosRequest inValue = new Consumo.ServiceReference1.ObtenerProductosRequest();
+            inValue.Body = new Consumo.ServiceReference1.ObtenerProductosRequestBody();
+            return ((Consumo.ServiceReference1.ServiciosSoap)(this)).ObtenerProductosAsync(inValue);
         }
     }
 }

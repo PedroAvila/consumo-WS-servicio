@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,9 +44,38 @@ namespace Consumo
 
             //string result = client.GuardarXML("<?xml version='1.0' encoding='UTF-8'?><documento><deporte><![CDATA[Futbol]]></deporte><equipos><equipo><nombre><![CDATA[Ajax]]></nombre><pais><![CDATA[Holanda]]></pais></equipo><equipo><nombre><![CDATA[Valencia]]></nombre><pais><![CDATA[España]]></pais></equipo></equipos></documento>");
 
-            string result = client.RetornarJson();
+            //dynamic json = new Dictionary<string, dynamic>();
+            //json.Add("Deporte", "Futbol");
 
-            Console.WriteLine(result);
+            //List<Dictionary<string, string>> equipos = new List<Dictionary<string, string>>();
+            //Dictionary<string, string> equipo1 = new Dictionary<string, string>();
+
+            //equipo1.Add("Nombre", "Chelsea");
+            //equipo1.Add("Pais", "Inglaterra");
+
+            //equipos.Add(equipo1);
+
+            //Dictionary<string, string> equipo2 = new Dictionary<string, string>();
+
+            //equipo2.Add("Nombre", "Barcelona");
+            //equipo2.Add("Pais", "España");
+
+            //equipos.Add(equipo2);
+
+            //json.Add("equipos", equipos);
+
+            ////string result = client.GuardarJson(JsonConvert.SerializeObject(json));
+            //string result = client.GuardarJson("{\"Deporte\":\"Futbol\",\"equipos\":[{\"Nombre\":\"AJAX\",\"Pais\":\"Holanda\"},{\"Nombre\":\"Real Madrid\",\"Pais\":\"España\"}]}");
+
+            string result = client.ObtenerProductos();
+
+            dynamic productos = JsonConvert.DeserializeObject(result);
+            foreach (dynamic producto in productos)
+            {
+                Console.WriteLine(producto);
+            }
+
+            //Console.WriteLine(result);
             Console.ReadKey();
         }
     }

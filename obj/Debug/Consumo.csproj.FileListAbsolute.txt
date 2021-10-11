@@ -5,3 +5,5 @@ D:\Csharp\Consumo\obj\Debug\Consumo.csproj.AssemblyReference.cache
 D:\Csharp\Consumo\obj\Debug\Consumo.csproj.CoreCompileInputs.cache
 D:\Csharp\Consumo\obj\Debug\Consumo.exe
 D:\Csharp\Consumo\obj\Debug\Consumo.pdb
+D:\Csharp\Consumo\bin\Debug\Newtonsoft.Json.dll
+D:\Csharp\Consumo\bin\Debug\Newtonsoft.Json.xml

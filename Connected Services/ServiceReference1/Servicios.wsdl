@@ -143,6 +143,30 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GuardarJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerProductos">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerProductosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -205,6 +229,18 @@
   <wsdl:message name="RetornarJsonSoapOut">
     <wsdl:part name="parameters" element="tns:RetornarJsonResponse" />
   </wsdl:message>
+  <wsdl:message name="GuardarJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarJson" />
+  </wsdl:message>
+  <wsdl:message name="GuardarJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerProductos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerProductosResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServiciosSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -246,6 +282,14 @@
     <wsdl:operation name="RetornarJson">
       <wsdl:input message="tns:RetornarJsonSoapIn" />
       <wsdl:output message="tns:RetornarJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarJson">
+      <wsdl:input message="tns:GuardarJsonSoapIn" />
+      <wsdl:output message="tns:GuardarJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductos">
+      <wsdl:input message="tns:ObtenerProductosSoapIn" />
+      <wsdl:output message="tns:ObtenerProductosSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiciosSoap" type="tns:ServiciosSoap">
@@ -340,6 +384,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GuardarJson">
+      <soap:operation soapAction="http://tempuri.org/GuardarJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductos">
+      <soap:operation soapAction="http://tempuri.org/ObtenerProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiciosSoap12" type="tns:ServiciosSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -426,6 +488,24 @@
     </wsdl:operation>
     <wsdl:operation name="RetornarJson">
       <soap12:operation soapAction="http://tempuri.org/RetornarJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarJson">
+      <soap12:operation soapAction="http://tempuri.org/GuardarJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductos">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerProductos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
