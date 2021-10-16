@@ -81,6 +81,96 @@ namespace Consumo.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Producto", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Producto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdProductoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        private double PrecioField;
+        
+        private int StockField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdProducto {
+            get {
+                return this.IdProductoField;
+            }
+            set {
+                if ((this.IdProductoField.Equals(value) != true)) {
+                    this.IdProductoField = value;
+                    this.RaisePropertyChanged("IdProducto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public double Precio {
+            get {
+                return this.PrecioField;
+            }
+            set {
+                if ((this.PrecioField.Equals(value) != true)) {
+                    this.PrecioField = value;
+                    this.RaisePropertyChanged("Precio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Stock {
+            get {
+                return this.StockField;
+            }
+            set {
+                if ((this.StockField.Equals(value) != true)) {
+                    this.StockField = value;
+                    this.RaisePropertyChanged("Stock");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ServiciosSoap")]
     public interface ServiciosSoap {
@@ -167,6 +257,27 @@ namespace Consumo.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerProductos", ReplyAction="*")]
         System.Threading.Tasks.Task<Consumo.ServiceReference1.ObtenerProductosResponse> ObtenerProductosAsync(Consumo.ServiceReference1.ObtenerProductosRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ObtenerProductoResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerProducto", ReplyAction="*")]
+        Consumo.ServiceReference1.ObtenerProductoResponse ObtenerProducto(Consumo.ServiceReference1.ObtenerProductoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerProducto", ReplyAction="*")]
+        System.Threading.Tasks.Task<Consumo.ServiceReference1.ObtenerProductoResponse> ObtenerProductoAsync(Consumo.ServiceReference1.ObtenerProductoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento producto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AcualizarProducto", ReplyAction="*")]
+        Consumo.ServiceReference1.AcualizarProductoResponse AcualizarProducto(Consumo.ServiceReference1.AcualizarProductoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AcualizarProducto", ReplyAction="*")]
+        System.Threading.Tasks.Task<Consumo.ServiceReference1.AcualizarProductoResponse> AcualizarProductoAsync(Consumo.ServiceReference1.AcualizarProductoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento producto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarProducto", ReplyAction="*")]
+        Consumo.ServiceReference1.GuardarProductoResponse GuardarProducto(Consumo.ServiceReference1.GuardarProductoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarProducto", ReplyAction="*")]
+        System.Threading.Tasks.Task<Consumo.ServiceReference1.GuardarProductoResponse> GuardarProductoAsync(Consumo.ServiceReference1.GuardarProductoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -882,6 +993,210 @@ namespace Consumo.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerProducto", Namespace="http://tempuri.org/", Order=0)]
+        public Consumo.ServiceReference1.ObtenerProductoRequestBody Body;
+        
+        public ObtenerProductoRequest() {
+        }
+        
+        public ObtenerProductoRequest(Consumo.ServiceReference1.ObtenerProductoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ObtenerProductoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public ObtenerProductoRequestBody() {
+        }
+        
+        public ObtenerProductoRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerProductoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerProductoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Consumo.ServiceReference1.ObtenerProductoResponseBody Body;
+        
+        public ObtenerProductoResponse() {
+        }
+        
+        public ObtenerProductoResponse(Consumo.ServiceReference1.ObtenerProductoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ObtenerProductoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Consumo.ServiceReference1.Producto ObtenerProductoResult;
+        
+        public ObtenerProductoResponseBody() {
+        }
+        
+        public ObtenerProductoResponseBody(Consumo.ServiceReference1.Producto ObtenerProductoResult) {
+            this.ObtenerProductoResult = ObtenerProductoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AcualizarProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AcualizarProducto", Namespace="http://tempuri.org/", Order=0)]
+        public Consumo.ServiceReference1.AcualizarProductoRequestBody Body;
+        
+        public AcualizarProductoRequest() {
+        }
+        
+        public AcualizarProductoRequest(Consumo.ServiceReference1.AcualizarProductoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AcualizarProductoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Consumo.ServiceReference1.Producto producto;
+        
+        public AcualizarProductoRequestBody() {
+        }
+        
+        public AcualizarProductoRequestBody(Consumo.ServiceReference1.Producto producto) {
+            this.producto = producto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AcualizarProductoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AcualizarProductoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Consumo.ServiceReference1.AcualizarProductoResponseBody Body;
+        
+        public AcualizarProductoResponse() {
+        }
+        
+        public AcualizarProductoResponse(Consumo.ServiceReference1.AcualizarProductoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AcualizarProductoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AcualizarProductoResult;
+        
+        public AcualizarProductoResponseBody() {
+        }
+        
+        public AcualizarProductoResponseBody(string AcualizarProductoResult) {
+            this.AcualizarProductoResult = AcualizarProductoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GuardarProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GuardarProducto", Namespace="http://tempuri.org/", Order=0)]
+        public Consumo.ServiceReference1.GuardarProductoRequestBody Body;
+        
+        public GuardarProductoRequest() {
+        }
+        
+        public GuardarProductoRequest(Consumo.ServiceReference1.GuardarProductoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GuardarProductoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Consumo.ServiceReference1.Producto producto;
+        
+        public GuardarProductoRequestBody() {
+        }
+        
+        public GuardarProductoRequestBody(Consumo.ServiceReference1.Producto producto) {
+            this.producto = producto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GuardarProductoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GuardarProductoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Consumo.ServiceReference1.GuardarProductoResponseBody Body;
+        
+        public GuardarProductoResponse() {
+        }
+        
+        public GuardarProductoResponse(Consumo.ServiceReference1.GuardarProductoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GuardarProductoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int GuardarProductoResult;
+        
+        public GuardarProductoResponseBody() {
+        }
+        
+        public GuardarProductoResponseBody(int GuardarProductoResult) {
+            this.GuardarProductoResult = GuardarProductoResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiciosSoapChannel : Consumo.ServiceReference1.ServiciosSoap, System.ServiceModel.IClientChannel {
     }
@@ -1180,6 +1495,81 @@ namespace Consumo.ServiceReference1 {
             Consumo.ServiceReference1.ObtenerProductosRequest inValue = new Consumo.ServiceReference1.ObtenerProductosRequest();
             inValue.Body = new Consumo.ServiceReference1.ObtenerProductosRequestBody();
             return ((Consumo.ServiceReference1.ServiciosSoap)(this)).ObtenerProductosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Consumo.ServiceReference1.ObtenerProductoResponse Consumo.ServiceReference1.ServiciosSoap.ObtenerProducto(Consumo.ServiceReference1.ObtenerProductoRequest request) {
+            return base.Channel.ObtenerProducto(request);
+        }
+        
+        public Consumo.ServiceReference1.Producto ObtenerProducto(int id) {
+            Consumo.ServiceReference1.ObtenerProductoRequest inValue = new Consumo.ServiceReference1.ObtenerProductoRequest();
+            inValue.Body = new Consumo.ServiceReference1.ObtenerProductoRequestBody();
+            inValue.Body.id = id;
+            Consumo.ServiceReference1.ObtenerProductoResponse retVal = ((Consumo.ServiceReference1.ServiciosSoap)(this)).ObtenerProducto(inValue);
+            return retVal.Body.ObtenerProductoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Consumo.ServiceReference1.ObtenerProductoResponse> Consumo.ServiceReference1.ServiciosSoap.ObtenerProductoAsync(Consumo.ServiceReference1.ObtenerProductoRequest request) {
+            return base.Channel.ObtenerProductoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Consumo.ServiceReference1.ObtenerProductoResponse> ObtenerProductoAsync(int id) {
+            Consumo.ServiceReference1.ObtenerProductoRequest inValue = new Consumo.ServiceReference1.ObtenerProductoRequest();
+            inValue.Body = new Consumo.ServiceReference1.ObtenerProductoRequestBody();
+            inValue.Body.id = id;
+            return ((Consumo.ServiceReference1.ServiciosSoap)(this)).ObtenerProductoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Consumo.ServiceReference1.AcualizarProductoResponse Consumo.ServiceReference1.ServiciosSoap.AcualizarProducto(Consumo.ServiceReference1.AcualizarProductoRequest request) {
+            return base.Channel.AcualizarProducto(request);
+        }
+        
+        public string AcualizarProducto(Consumo.ServiceReference1.Producto producto) {
+            Consumo.ServiceReference1.AcualizarProductoRequest inValue = new Consumo.ServiceReference1.AcualizarProductoRequest();
+            inValue.Body = new Consumo.ServiceReference1.AcualizarProductoRequestBody();
+            inValue.Body.producto = producto;
+            Consumo.ServiceReference1.AcualizarProductoResponse retVal = ((Consumo.ServiceReference1.ServiciosSoap)(this)).AcualizarProducto(inValue);
+            return retVal.Body.AcualizarProductoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Consumo.ServiceReference1.AcualizarProductoResponse> Consumo.ServiceReference1.ServiciosSoap.AcualizarProductoAsync(Consumo.ServiceReference1.AcualizarProductoRequest request) {
+            return base.Channel.AcualizarProductoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Consumo.ServiceReference1.AcualizarProductoResponse> AcualizarProductoAsync(Consumo.ServiceReference1.Producto producto) {
+            Consumo.ServiceReference1.AcualizarProductoRequest inValue = new Consumo.ServiceReference1.AcualizarProductoRequest();
+            inValue.Body = new Consumo.ServiceReference1.AcualizarProductoRequestBody();
+            inValue.Body.producto = producto;
+            return ((Consumo.ServiceReference1.ServiciosSoap)(this)).AcualizarProductoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Consumo.ServiceReference1.GuardarProductoResponse Consumo.ServiceReference1.ServiciosSoap.GuardarProducto(Consumo.ServiceReference1.GuardarProductoRequest request) {
+            return base.Channel.GuardarProducto(request);
+        }
+        
+        public int GuardarProducto(Consumo.ServiceReference1.Producto producto) {
+            Consumo.ServiceReference1.GuardarProductoRequest inValue = new Consumo.ServiceReference1.GuardarProductoRequest();
+            inValue.Body = new Consumo.ServiceReference1.GuardarProductoRequestBody();
+            inValue.Body.producto = producto;
+            Consumo.ServiceReference1.GuardarProductoResponse retVal = ((Consumo.ServiceReference1.ServiciosSoap)(this)).GuardarProducto(inValue);
+            return retVal.Body.GuardarProductoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Consumo.ServiceReference1.GuardarProductoResponse> Consumo.ServiceReference1.ServiciosSoap.GuardarProductoAsync(Consumo.ServiceReference1.GuardarProductoRequest request) {
+            return base.Channel.GuardarProductoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Consumo.ServiceReference1.GuardarProductoResponse> GuardarProductoAsync(Consumo.ServiceReference1.Producto producto) {
+            Consumo.ServiceReference1.GuardarProductoRequest inValue = new Consumo.ServiceReference1.GuardarProductoRequest();
+            inValue.Body = new Consumo.ServiceReference1.GuardarProductoRequestBody();
+            inValue.Body.producto = producto;
+            return ((Consumo.ServiceReference1.ServiciosSoap)(this)).GuardarProductoAsync(inValue);
         }
     }
 }

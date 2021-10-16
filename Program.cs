@@ -67,15 +67,41 @@ namespace Consumo
             ////string result = client.GuardarJson(JsonConvert.SerializeObject(json));
             //string result = client.GuardarJson("{\"Deporte\":\"Futbol\",\"equipos\":[{\"Nombre\":\"AJAX\",\"Pais\":\"Holanda\"},{\"Nombre\":\"Real Madrid\",\"Pais\":\"España\"}]}");
 
-            string result = client.ObtenerProductos();
+            //string result = client.ObtenerProductos();
 
-            dynamic productos = JsonConvert.DeserializeObject(result);
-            foreach (dynamic producto in productos)
+            //dynamic productos = JsonConvert.DeserializeObject(result);
+            //foreach (dynamic producto in productos)
+            //{
+            //    Console.WriteLine(producto);
+            //}
+
+            //ServiceReference1.Producto result = client.ObtenerProducto(2);
+            //Console.WriteLine(result.IdProducto);
+            //Console.WriteLine(result.Nombre);
+            //Console.WriteLine(result.Precio);
+            //Console.WriteLine(result.Stock);
+
+
+            //var producto = new ServiceReference1.Producto()
+            //{
+            //    IdProducto = 2,
+            //    Nombre = "LCD",
+            //    Precio = 750.33,
+            //    Stock = 7
+            //};
+
+            //string result = client.AcualizarProducto(producto);
+
+            var producto = new ServiceReference1.Producto()
             {
-                Console.WriteLine(producto);
-            }
+                Nombre = "PS4",
+                Precio = 357,
+                Stock = 3
+            };
 
-            //Console.WriteLine(result);
+            int result = client.GuardarProducto(producto);
+
+            Console.WriteLine(result);
             Console.ReadKey();
         }
     }

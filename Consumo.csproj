@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.AcualizarProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.ArrayOfString.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -76,6 +79,9 @@
     <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.GuardarLogResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.GuardarProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.GuardarXMLResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -88,7 +94,13 @@
     <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.ObtenerfrutasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.ObtenerProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.ObtenerProductosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.Producto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\Consumo.ServiceReference1.RetornarJsonResponse.datasource">
